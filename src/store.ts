@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex, {StoreOptions} from 'vuex';
+import torques from './modules/torques/store';
 import users from './modules/users/store';
 
 Vue.use(Vuex);
@@ -13,6 +14,7 @@ const store: StoreOptions<IRootState> = {
     version: '1.0.0',
   },
   modules: {
+    torques,
     users,
   },
 };
