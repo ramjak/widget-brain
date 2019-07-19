@@ -2,11 +2,18 @@
 import Vue from 'vue';
 import Header from '../components/Header.vue';
 import Sidebar from '../components/Sidebar.vue';
+import {mapState} from 'vuex';
 
 const Torques = {
   components: {
     Header,
     Sidebar,
+  },
+  computed: mapState({
+    torques: (state) => state.torques.data,
+  }),
+  mounted() {
+    this.$store.dispatch('fetchTorques');
   },
   data() {
     return {
@@ -34,9 +41,38 @@ export default Torques;
     <div id="right-panel" class="right-panel">
       <Header />
       <div class="content pb-0">
-        <transition enter-active-class="animated fadeIn">
-          <router-view></router-view>
-        </transition>
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-top">
+              <h4 class="card-title m-0 float-left">Closed</h4><!-- /.content-title -->
+              <div class="float-right text-r">
+                <button class="content-settings" data-toggle="tooltip" data-placement="top" title="Settings"><i class="fa fa-cog"></i></button>
+                <button class="content-collapse" data-toggle="tooltip" data-placement="top" title="Collapse"><i class="fa fa-angle-down"></i></button>
+                <button class="content-close" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close"></i></button>
+              </div>
+
+            </div><!-- /.card-top -->
+            <div class="card-body p-0">
+              chart
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-top">
+              <h4 class="card-title m-0 float-left">Open</h4><!-- /.content-title -->
+              <div class="float-right text-r">
+                <button class="content-settings" data-toggle="tooltip" data-placement="top" title="Settings"><i class="fa fa-cog"></i></button>
+                <button class="content-collapse" data-toggle="tooltip" data-placement="top" title="Collapse"><i class="fa fa-angle-down"></i></button>
+                <button class="content-close" data-toggle="tooltip" data-placement="top" title="Close"><i class="fa fa-close"></i></button>
+              </div>
+
+            </div><!-- /.card-top -->
+            <div class="card-body p-0">
+              chart
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
