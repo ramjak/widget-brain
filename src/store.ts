@@ -1,16 +1,20 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
+import Vuex, {StoreOptions} from 'vuex';
+import users from './modules/users/store';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+export interface IRootState {
+  version: string;
+}
+
+const store: StoreOptions<IRootState> = {
   state: {
-
+    version: '1.0.0',
   },
-  mutations: {
-
+  modules: {
+    users,
   },
-  actions: {
+};
 
-  },
-});
+export default new Vuex.Store<IRootState>(store);
