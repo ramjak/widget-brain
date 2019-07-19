@@ -21,7 +21,8 @@
     "vue-router": "^3.0.3",
     "vue-strict-prop": "^0.3.5",
     "vue-tsx-support": "^2.3.0",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuex-class": "^0.3.2"
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",

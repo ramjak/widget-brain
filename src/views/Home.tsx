@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld.tsx';
 // @ts-ignore
 import logo from '../assets/logo.png';
 import {InputHTMLAttributes, SyntheticEvent} from 'vue-tsx-support/types/dom';
+import Users from '@/modules/users/views/Users.vue';
 
 const Home = tsx.componentFactory.create({
   data() {
@@ -27,6 +28,7 @@ const Home = tsx.componentFactory.create({
       <input type='number' value={this.a} onChange={this.changeCounter} />
       <br />
       <button onClick={this.increaseCounter}>Click Me!</button>
+      <Users />
       <HelloWorld msg='Welcome to Your Vue.js + TypeScript' />
     </div>;
   },
