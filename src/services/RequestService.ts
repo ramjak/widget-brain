@@ -10,7 +10,7 @@ import IRequestService, {
 
 export default class RequestService implements IRequestService {
   private authService: IAuthService;
-  private baseUrl = process.env.REACT_APP_BASE_URL;
+  private baseUrl = process.env.VUE_APP_BASE_URL;
 
   constructor(authService: IAuthService) {
     this.authService = authService;
